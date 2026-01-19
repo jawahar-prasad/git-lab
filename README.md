@@ -467,6 +467,176 @@ To delete any particular stash (For ex:– stash@{1}), use ‘git stash drop sta
 9. Once merged pull requests, you'll see changes in main branch of remote repo
 
 
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (feature)
+$ git init
+Initialized empty Git repository in C:/Users/jawah/OneDrive/Desktop/New folder (2)/.git/
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (master)
+$ touch a.txt b.txt Customer.java
+  mkdir logs
+  touch logs/server.log logs/access.log
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Customer.java
+        a.txt
+        b.txt
+        logs/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (master)
+$ touch .gitignore
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (master)
+$ notepad .gitignore
+
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Customer.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (master)
+$ git add Customer.java
+  git commit -m "Added Customer.java file"
+[master (root-commit) cd204f8] Added Customer.java file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Customer.java
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (master)
+$ git branch
+* master
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (master)
+$ git checkout -b feature1
+Switched to a new branch 'feature1'
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (feature1)
+$ git branch
+* feature1
+  master
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (feature1)
+$ git log --oneline
+cd204f8 (HEAD -> feature1, master) Added Customer.java file
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (feature1)
+$ git checkout feature1
+Already on 'feature1'
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (feature1)
+$ git cherry-pick cd204f8
+On branch feature1
+You are currently cherry-picking commit cd204f8.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+nothing to commit, working tree clean
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (2) (feature1|CHERRY-PICKING)
+$ git log --oneline
+cd204f8 (HEAD -> feature1, master) Added Customer.java file
+3333
+
+
+
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/jawah/OneDrive/Desktop/updated 2/.git/
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ touch file1.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git add file1.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git commit -m "Initial commit"
+[master (root-commit) 66add5b] Initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git branch
+* master
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git branch feature
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (feature)
+$ git switch feature
+Already on 'feature'
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (feature)
+$ git branch
+* feature
+  master
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (feature)
+$ touch feature.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (feature)
+$ git add feature.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (feature)
+$ git commit -m "Added feature file"
+[feature 0055ebf] Added feature file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (feature)
+$ git checkout master
+Switched to branch 'master'
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git merge feature
+Updating 66add5b..0055ebf
+Fast-forward
+ feature.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git branch --merged
+  feature
+* master
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ git branch --no-merged
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/updated 2 (master)
+$ ls
+feature.txt  file1.txt
+22222
+
+
  
  
 
