@@ -637,6 +637,129 @@ feature.txt  file1.txt
 22222
 
 
+
+Create a repo in GitHub
+
+Go to GitHub
+
+Click New Repository
+
+Repo name: git-demo
+
+Keep it Public
+
+❌ Do NOT initialize with README (for learning clarity)
+
+Click Create repository
+
+👉 Now you have a remote repository
+
+2️⃣ Create a file and add one line
+
+On GitHub (optional way) OR locally later.
+
+Let’s do it locally (best practice).
+
+We’ll create the file after cloning.
+
+3️⃣ Create a folder, open Git Bash, do git init and git clone
+Create a parent folder
+mkdir projects
+cd projects
+
+Initialize git (optional but okay)
+git init
+
+Clone the remote repo
+git clone https://github.com/your-username/git-demo.git
+
+4️⃣ Remote repo folder appears locally
+
+After cloning, folder structure looks like:
+
+projects/
+ └── git-demo/
+
+
+This git-demo folder is your local copy of the remote repo.
+
+5️⃣ cd <path_of_remote_repo_folder>
+cd git-demo
+
+
+You are now inside the local repo linked to GitHub
+
+Check:
+
+git status
+
+6️⃣ Open file and add changes
+Create file
+touch hello.txt
+
+Add one line
+
+Open file and add:
+
+Hello, this is my first Git commit.
+
+Save and stage
+git add hello.txt
+git commit -m "Add hello.txt with initial content"
+
+Push to main branch
+git push origin main
+
+
+Now hello.txt exists in remote main branch.
+
+7️⃣ Create a new feature branch and push it
+Create and switch branch
+git checkout -b feature-update
+
+Modify file
+
+Edit hello.txt:
+
+Hello, this is my first Git commit.
+This line was added in feature branch.
+
+Commit changes
+git add hello.txt
+git commit -m "Update hello.txt in feature branch"
+
+Push feature branch to remote
+git push origin feature-update
+
+
+👉 Now GitHub has two branches:
+
+main
+
+feature-update
+
+8️⃣ Open GitHub and follow manual steps (Pull Request)
+
+Go to GitHub repo
+
+Click Compare & pull request
+
+Base branch: main
+
+Compare branch: feature-update
+
+Click Create Pull Request
+
+Review changes
+
+Click Merge pull request
+
+Confirm merge
+
+🎉 Feature branch is now merged into main
+
+444
+
  
  
 
