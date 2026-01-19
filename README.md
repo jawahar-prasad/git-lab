@@ -454,7 +454,19 @@ To provide more contexts to the stash we create the stash using the following co
 •	git stash show
   
 5. Cleaning Up Your Stash (Git Stash Clear)
-To delete any particular stash (For ex:– stash@{1}), use ‘git stash drop stash@{1}’. By default, this command will drop stash@{0} if no argument is provided (git stash drop). To delete all stashes at once, use the ‘git stash clear’ command. 
+To delete any particular stash (For ex:– stash@{1}), use ‘git stash drop stash@{1}’. By default, this command will drop stash@{0} if no argument is provided (git stash drop). To delete all stashes at once, use the ‘git stash clear’ command.
+
+1. First create a repo in github
+2. Create a file and add one line in that file and save
+3. Create a folder, open gitbash, do git init and git clone
+4. You'll get the folder of remote repo in local folder. Copy that path
+5. do "cd <path_of_remote_repo_folder>"
+6. Open the file of remote repo in local repo and add some changes
+7. Create a new feature branch and push that particular branch into remote repo
+8. Open github aNd follow the steps mentioned in manual
+9. Once merged pull requests, you'll see changes in main branch of remote repo
+
+
  
  
 
