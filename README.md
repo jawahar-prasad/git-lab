@@ -760,6 +760,125 @@ Confirm merge
 
 444
 
+
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (feature)
+$ git init
+Initialized empty Git repository in C:/Users/jawah/OneDrive/Desktop/New folder (7)/.git/
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ touch a.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ touch b.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git add .
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+        new file:   b.txt
+
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git commit -m "initial commit"
+[master (root-commit) ca46954] initial commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 a.txt
+ create mode 100644 b.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git tag version1.0
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git tag
+version1.0
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git tag -d version1.0
+Deleted tag 'version1.0' (was ca46954)
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git tag -a version1.0 -m "first stable release"
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$  git tag -a version1.0 -m "first stable release" ca46954
+fatal: tag 'version1.0' already exists
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git log --oneline
+ca46954 (HEAD -> master, tag: version1.0) initial commit
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ echo "hello git" >>a.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git add a.txt
+warning: in the working copy of 'a.txt', LF will be replaced by CRLF the next time Git touches it
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git log --oneline
+ca46954 (HEAD -> master, tag: version1.0) initial commit
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git reset --soft  ca46954
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git log --onrline
+bash: gitt: command not found
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git log --oneline
+ca46954 (HEAD -> master, tag: version1.0) initial commit
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   a.txt
+
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$  git reset --mixed  ca46954
+Unstaged changes after reset:
+M       a.txt
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git log --oneline
+ca46954 (HEAD -> master, tag: version1.0) initial commit
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$  git reset --hard  ca46954
+HEAD is now at ca46954 initial commit
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git log --oneline
+ca46954 (HEAD -> master, tag: version1.0) initial commit
+
+jawah@LAPTOP-F4B6F0HG MINGW64 ~/OneDrive/Desktop/New folder (7) (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+7 answer
  
  
 
